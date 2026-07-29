@@ -1,0 +1,58 @@
+{
+  "name": "social-media-app",
+  "version": "1.0.0",
+  "description": "A local-first social media API (auth, posts, comments, chat, notifications, GraphQL) built with Express, MongoDB, Redis and Socket.IO.",
+  "main": "./dist/main.js",
+  "type": "module",
+  "license": "ISC",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "start:dev": "concurrently \"tsc -w\" \"node --watch dist/main.js\"",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test:watch": "node --experimental-vm-modules node_modules/.bin/jest --watch"
+  },
+  "keywords": [
+    "express",
+    "mongodb",
+    "socket.io",
+    "graphql",
+    "social-media"
+  ],
+  "author": "",
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/express": "^5.0.6",
+    "@types/jest": "^29.5.14",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/multer": "^2.1.0",
+    "@types/node": "^25.5.2",
+    "@types/nodemailer": "^8.0.0",
+    "@types/supertest": "^6.0.2",
+    "concurrently": "^9.2.1",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "express-rate-limit": "^7.5.0",
+    "firebase-admin": "^13.8.0",
+    "google-auth-library": "^10.6.2",
+    "graphql": "^16.13.2",
+    "graphql-http": "^1.22.4",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "~7.5",
+    "mongoose": "^9.4.1",
+    "multer": "^2.1.1",
+    "nodemailer": "^8.0.5",
+    "redis": "^5.11.0",
+    "socket.io": "^4.8.3",
+    "typescript": "^5.0.0",
+    "zod": "^4.3.6"
+  }
+}

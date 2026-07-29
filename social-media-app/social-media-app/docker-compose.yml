@@ -1,0 +1,32 @@
+networks:
+  social-media-app-local:
+
+# This compose file is for LOCAL DEVELOPMENT ONLY: it just gives you a
+# MongoDB and Redis instance to run against. There is no production
+# deployment configuration in this project.
+services:
+  mongo:
+    image: mongo:7
+    container_name: social-media-app-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - social-media-app-local
+
+  redis:
+    image: redis:7-alpine
+    container_name: social-media-app-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - social-media-app-local
+
+volumes:
+  mongo-data:
+  redis-data:
